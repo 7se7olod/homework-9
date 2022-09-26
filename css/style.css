@@ -84,6 +84,13 @@
     border-radius: inherit;
 }
 
+input, input:before, input:after {
+    -webkit-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial;
+}
+
 @media (max-width: 768px) {
 
     .slide-banner-title {
