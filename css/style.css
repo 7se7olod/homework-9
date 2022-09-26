@@ -1,3 +1,7 @@
+.slide-banner-title {
+    font-size: 3rem;
+}
+
 .slick-slide {
     min-width: 0;
 }
@@ -41,6 +45,18 @@
     content: none;
 }
 
+.album-title {
+    font-size: 2rem;
+}
+
+.faq-main-title {
+    font-size: 2rem;
+}
+
+.main-form-title {
+    font-size: 2rem;
+}
+
 .ui-accordion-header-icon.ui-icon.ui-icon-triangle-1-e {
     background-image: url("../images/img_4.png");
     background-position: center;
@@ -69,6 +85,11 @@
 }
 
 @media (max-width: 768px) {
+
+    .slide-banner-title {
+        font-size: 30px;
+    }
+
     .slider .slick-arrow {
         width: 30px;
         height: 30px;

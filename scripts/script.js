@@ -5,14 +5,15 @@ $(document).ready(function () {
     let formSubmitButton = $('.submit-form');
     let formIndex = $('#index');
     let formLabels = $('.form-label');
-    var icons = {
+    let icons = {
         header: "img-4",
         activeHeader: "img-3"
     };
 
     $("#accordion").accordion({
         collapsible: true,
-        icon: icons
+        icon: icons,
+        heightStyle: "content"
     });
 
     $('.magnific-popup').magnificPopup({
@@ -30,6 +31,11 @@ $(document).ready(function () {
             }
         }
 
+        if (formIndex.val().length !== 6) {
+            alert('Поле индекс должно содержать 6 цифр');
+            return;
+        }
+
         $('.main-form').fadeOut('slow', function (e) {
             $('.main-form').attr('class', 'd-none');
         });
@@ -38,8 +44,11 @@ $(document).ready(function () {
     };
 
     formIndex.keydown(function (e) {
-        let regx = /^[0-9]$/;
-        if (!e.key.match(regx)) {
+        let regx = /[0-9]/;
+        // Разрешаем: backspace, delete, tab и escape
+        if (e.keyCode == 46 || e.keyCode == 8 || e.keyCode == 9 || e.keyCode == 27) {
+            return;
+        } else if (!e.key.match(regx)) {
             e.preventDefault();
         }
     });
